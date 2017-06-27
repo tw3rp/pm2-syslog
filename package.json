@@ -1,6 +1,6 @@
 {
   "name": "pm2-syslog2",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Redirect PM2/apps logs to syslog",
   "main": "probe.js",
   "scripts": {
@@ -22,10 +22,10 @@
   "config": {
       "tag": "pm2",
       "facility": "user",
-      "hostname": null,
-      "transport": null,
-      "path": null,
-      "port": null,
+      "hostname": "localhost",
+      "transport": "UDP",
+      "path": "/dev/log",
+      "port": 514,
       "format": "text"
   }
 }
