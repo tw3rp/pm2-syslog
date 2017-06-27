@@ -1,34 +1,28 @@
 # pm2-syslog
 
-Redirect all logs of PM2 + Apps managed into `/var/log/syslog`
+Redirect all logs of PM2 + Apps managed into `syslog`
 
-## Configure OS
-
-Edit `/etc/rsyslog.conf` and uncomment:
-
-```
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
-```
-
-Restart rsyslog:
-
-```
-$ sudo service rsyslog restart
-```
 
 ## Install module
 
 ```
 # Install
-$ pm2 install pm2-syslog
+$ pm2 install pm2-syslog2
 
-# change the default hostname using
-$ pm2 set pm2-syslog:hostname localhost
+# Configure pm2-syslog2 depending to where your syslog daemon listens
+$ pm2 set pm2-syslog:hostname localhost  # localhost is the default.
+$ pm2 set pm2-syslog:port 514  # 514 is the default.
+# or
+$ pm2 set pm2-syslog:path /dev/log
+
+# Optionally change the facility
+$ pm2 set pm2-syslog:facility local0  # user is the default
+
+# Optionally change the log format
+$ pm2 set pm2-syslog:format json  # text is the default
 
 # Uninstall
-$ pm2 uninstall pm2-syslog
+$ pm2 uninstall pm2-syslog2
 ```
 
 # License
