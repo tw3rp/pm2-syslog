@@ -18,5 +18,14 @@
     }
   ],
   "author": "Alexandre Strzelewicz",
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+      "tag": "pm2",
+      "facility": "user",
+      "hostname": null,
+      "transport": null,
+      "path": null,
+      "port": null,
+      "format": "text"
+  }
 }
