@@ -25,7 +25,6 @@ var startPM2 = function(conf) {
             message.date = logger.getDate();
             message.pid = process.pid;
             message.hostname = logger.hostname;
-            message.tag = logger.tag;
             return JSON.stringify(message);
         };
     } else if (conf.format == 'text') {
