@@ -3,7 +3,7 @@ var startPM2 = function(conf) {
     var SysLogger = require('ain2');
     var sysLoggerSettings = {
         tag: 'pm2',
-        facility: 'syslog'
+        facility: 'user'
     };
     if (conf.hostname) {
         sysLoggerSettings.hostname = conf.hostname;
