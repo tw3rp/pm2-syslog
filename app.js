@@ -58,7 +58,7 @@ var startPM2 = function(conf) {
             logger.error(formatter({
                 app: data.process.name,
                 id: data.process.pm_id,
-                message: data.data.replace(/\s*$/, '')
+                msgstr: data.data.replace(/\s*$/, '')
             }));
         });
 
@@ -66,7 +66,7 @@ var startPM2 = function(conf) {
             logger.log(formatter({
                 app: data.process.name,
                 id: data.process.pm_id,
-                message: data.data.replace(/\s*$/, '')
+                msgstr: data.data.replace(/\s*$/, '')
             }));
         });
     });
