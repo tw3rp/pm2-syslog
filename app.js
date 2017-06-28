@@ -9,6 +9,8 @@ var startPM2 = function(conf) {
     var logger = new SysLogger(conf);
     var formatter;
 
+    process.title = 'pm2-syslog2';
+
     logger.setMessageComposer(function(message, severity) {
         if (conf.format == 'json') {
             return new Buffer('<' + (this.facility * 8 + severity) + '>' +
